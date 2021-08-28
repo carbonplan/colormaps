@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
-import chroma from 'chroma-js'
 import { useThemeUI, useColorMode } from 'theme-ui'
+import chroma from 'chroma-js'
 
 export const useColormap = (name, count = 255) => {
   const {
@@ -8,7 +8,7 @@ export const useColormap = (name, count = 255) => {
   } = useThemeUI()
   const [mode] = useColorMode()
 
-  const { primary, background, secondary, hinted } = colors
+  const { background, secondary } = colors
 
   const red = '#f57273'
   const orange = '#e39046'
@@ -33,39 +33,51 @@ export const useColormap = (name, count = 255) => {
   const colormap = useMemo(() => {
     let ramp
     let bezier = true
+    let correctLightness = false
 
     switch (name) {
       case 'reds':
+        correctLightness = true
         ramp = [start, red]
         break
       case 'oranges':
+        correctLightness = true
         ramp = [start, orange]
         break
       case 'yellows':
+        correctLightness = true
         ramp = [start, yellow]
         break
       case 'greens':
+        correctLightness = true
         ramp = [start, green]
         break
       case 'teals':
+        correctLightness = true
         ramp = [start, teal]
         break
       case 'blues':
+        correctLightness = true
         ramp = [start, blue]
         break
       case 'purples':
+        correctLightness = true
         ramp = [start, purple]
         break
       case 'pinks':
+        correctLightness = true
         ramp = [start, pink]
         break
       case 'coolgreys':
+        correctLightness = true
         ramp = [start, grey]
         break
       case 'greys':
+        correctLightness = true
         ramp = [start, middle]
         break
       case 'redorange':
+        correctLightness = true
         if (mode === 'dark') {
           ramp = [start, chroma(red).darken(1), chroma(orange)]
         }
@@ -74,6 +86,7 @@ export const useColormap = (name, count = 255) => {
         }
         break
       case 'yellowgreen':
+        correctLightness = true
         if (mode === 'dark') {
           ramp = [start, chroma(yellow).darken(1), chroma(green)]
         }
@@ -82,6 +95,7 @@ export const useColormap = (name, count = 255) => {
         }
         break
       case 'tealblue':
+        correctLightness = true
         if (mode === 'dark') {
           ramp = [start, chroma(teal).darken(1), chroma(blue)]
         }
@@ -90,6 +104,7 @@ export const useColormap = (name, count = 255) => {
         }
         break
       case 'purplepink':
+        correctLightness = true
         if (mode === 'dark') {
           ramp = [start, chroma(purple).darken(1), chroma(pink)]
         }
@@ -243,12 +258,15 @@ export const useColormap = (name, count = 255) => {
 
     let scale
     if (bezier) {
-      scale = chroma.bezier(ramp).scale().colors(count, 'rgb')
+      scale = chroma.bezier(ramp).scale()
     } else {
-      scale = chroma.scale(ramp).mode('lab').colors(count, 'rgb')
+      scale = chroma.scale(ramp).mode('lab')
+    }
+    if (correctLightness) {
+      scale = scale.correctLightness()
     }
 
-    return scale
+    return scale.colors(count, 'rgb')
   }, [name, colors, mode])
 
   return colormap

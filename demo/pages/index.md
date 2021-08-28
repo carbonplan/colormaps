@@ -20,7 +20,7 @@ We use colormaps for a variety of data visualization needs at CarbonPlan, especi
   'pinks', 
   'coolgreys',
   'greys'
-].map(d => <Sample name={d}/>)}
+].map(d => <Sample key={d} name={d}/>)}
 </Box>
 
 ## Sequential multi-hue
@@ -33,7 +33,7 @@ We use colormaps for a variety of data visualization needs at CarbonPlan, especi
   'purplepink',
   'warm',
   'cool', 
-].map(d => <Sample name={d}/>)}
+].map(d => <Sample key={d} name={d}/>)}
 </Box>
 
 ## Diverging
@@ -52,7 +52,7 @@ We use colormaps for a variety of data visualization needs at CarbonPlan, especi
   'orangeblue',
   'yellowpurple',
   'greenpink'
-].map(d => <Sample name={d}/>)}
+].map(d => <Sample key={d} name={d}/>)}
 </Box>
 
 
@@ -62,7 +62,7 @@ We use colormaps for a variety of data visualization needs at CarbonPlan, especi
 {[
   'rainbow',
   'sinebow',
-].map(d => <Sample name={d}/>)}
+].map(d => <Sample key={d} name={d}/>)}
 </Box>
 
 export default ({children}) => <Section>{children}</Section>
