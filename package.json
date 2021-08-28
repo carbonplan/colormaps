@@ -1,0 +1,44 @@
+{
+  "name": "@carbonplan/colormaps",
+  "version": "1.0.0",
+  "description": "color scales for data visualization",
+  "main": "dst/index.js",
+  "module": "dst/index.esm.js",
+  "scripts": {
+    "build": "rimraf dst && microbundle src/index.js -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
+    "watch": "microbundle watch src/index.js -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
+    "format": "prettier --write 'src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbonplan/colormaps.git"
+  },
+  "keywords": [
+    "carbonplan",
+    "color",
+    "colormap",
+    "scale"
+  ],
+  "author": "freeman-lab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carbonplan/colormaps/issues"
+  },
+  "files": [
+    "dst"
+  ],
+  "homepage": "https://github.com/carbonplan/colormaps#readme",
+  "dependencies": {
+    "chroma-js": "^2.1.2",
+    "theme-ui": ">=0.10.0"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0 || ^17.0.2",
+    "react-dom": "^16.14.0 || ^17.0.2"
+  },
+  "devDependencies": {
+    "microbundle": "^0.13.0",
+    "prettier": "^2.2.1",
+    "rimraf": "3.0.2"
+  }
+}
