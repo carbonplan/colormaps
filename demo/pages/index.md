@@ -9,60 +9,61 @@ We use colormaps for a variety of data visualization needs at CarbonPlan, especi
 ## Sequential single-hue
 
 <Box>
-{[
-  'reds',
-  'oranges', 
-  'yellows', 
-  'greens', 
-  'teals', 
-  'blues', 
-  'purples', 
-  'pinks', 
-  'coolgreys',
-  'greys'
-].map(d => <Sample key={d} name={d}/>)}
+  {[
+    'reds',
+    'oranges',
+    'yellows',
+    'greens',
+    'teals',
+    'blues',
+    'purples',
+    'pinks',
+    'coolgreys',
+    'greys',
+  ].map((d) => (
+    <Sample key={d} name={d} />
+  ))}
 </Box>
 
 ## Sequential multi-hue
 
 <Box>
-{[
-  'redorange',
-  'yellowgreen',
-  'tealblue',
-  'purplepink',
-  'warm',
-  'cool', 
-].map(d => <Sample key={d} name={d}/>)}
+  {['redorange', 'yellowgreen', 'tealblue', 'purplepink', 'warm', 'cool'].map(
+    (d) => (
+      <Sample key={d} name={d} />
+    )
+  )}
 </Box>
 
 ## Diverging
 
 <Box>
-{[
-  'redgrey',
-  'orangegrey',
-  'yellowgrey',
-  'greengrey',
-  'tealgrey',
-  'bluegrey',
-  'purplegrey',
-  'pinkgrey',
-  'redteal',
-  'orangeblue',
-  'yellowpurple',
-  'greenpink'
-].map(d => <Sample key={d} name={d}/>)}
+  {[
+    'redgrey',
+    'orangegrey',
+    'yellowgrey',
+    'greengrey',
+    'tealgrey',
+    'bluegrey',
+    'purplegrey',
+    'pinkgrey',
+    'redteal',
+    'orangeblue',
+    'yellowpurple',
+    'greenpink',
+  ].map((d) => (
+    <Sample key={d} name={d} />
+  ))}
 </Box>
-
 
 ## Cyclical
 
 <Box>
-{[
-  'rainbow',
-  'sinebow',
-].map(d => <Sample key={d} name={d}/>)}
+  {['rainbow', 'sinebow'].map((d) => (
+    <Sample key={d} name={d} />
+  ))}
 </Box>
 
-export default ({children}) => <Section>{children}</Section>
+export default ({children}) => <Section>{children}</Section
+
+>

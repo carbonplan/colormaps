@@ -52,7 +52,3 @@ import { names } from '@carbonplan/colormaps'
 
 console.log(names)
 ```
-
-
-
-

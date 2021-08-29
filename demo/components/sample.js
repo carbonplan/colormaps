@@ -8,9 +8,11 @@ const Sample = ({ name, discrete }) => {
     const count = 9
     colors = useColormap(name, count)
     values = colors.map((d, i) => {
-      if (i == 0) return `rgb(${d}) ${Math.round(100/count)}%`
-      if (i == count - 1) return `rgb(${d}) ${Math.round(100 - 100/count)}%`
-      return `rgb(${d}) ${Math.round(100/count * i)}% ${Math.round(100/count * (i + 1))}%`
+      if (i == 0) return `rgb(${d}) ${Math.round(100 / count)}%`
+      if (i == count - 1) return `rgb(${d}) ${Math.round(100 - 100 / count)}%`
+      return `rgb(${d}) ${Math.round((100 / count) * i)}% ${Math.round(
+        (100 / count) * (i + 1)
+      )}%`
     })
   } else {
     colors = useColormap(name, 255)
