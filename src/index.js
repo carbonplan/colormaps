@@ -1,2 +1,2 @@
 export { default as useColormap } from './use-colormap'
-export { default as names } from './names'
+export { default as colormaps } from './colormaps'

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useThemeUI, useColorMode } from 'theme-ui'
 import chroma from 'chroma-js'
-import names from './names'
+import colormaps from './colormaps'
 
 const useColormap = (name, count = 255, format = 'rgb') => {
   const {
@@ -9,7 +9,7 @@ const useColormap = (name, count = 255, format = 'rgb') => {
   } = useThemeUI()
   const [mode] = useColorMode()
 
-  if (!names.includes(name)) {
+  if (!colormaps.map(d => d.name).includes(name)) {
     throw Error(`requested colormap '${name}' is not defined`)
   }
 
@@ -119,19 +119,20 @@ const useColormap = (name, count = 255, format = 'rgb') => {
         }
         break
       case 'warm':
+        bezier = true
         if (mode === 'dark') {
           ramp = [
             chroma(purple).darken(2),
             chroma(pink).darken(1),
             red,
-            chroma(orange),
-            chroma(yellow),
+            chroma(orange).brighten(0.25),
+            chroma(yellow).brighten(0.5),
           ]
         }
         if (mode === 'light') {
           ramp = [
-            chroma(purple),
-            chroma(pink),
+            chroma(purple).darken(0.5),
+            chroma(pink).darken(0.25),
             red,
             chroma(orange).brighten(1),
             chroma(yellow).brighten(1.5),
@@ -139,24 +140,29 @@ const useColormap = (name, count = 255, format = 'rgb') => {
         }
         break
       case 'cool':
+        bezier = true
         if (mode === 'dark') {
           ramp = [
             chroma(purple).darken(2),
             chroma(blue).darken(1),
             teal,
-            chroma(green),
-            chroma(yellow),
+            chroma(green).brighten(0.25),
+            chroma(yellow).brighten(0.5),
           ]
         }
         if (mode === 'light') {
           ramp = [
-            chroma(purple),
-            chroma(blue),
+            chroma(purple).darken(0.5),
+            chroma(blue).darken(0.25),
             teal,
             chroma(green).brighten(1),
             chroma(yellow).brighten(1.5),
           ]
         }
+        break
+      case 'pinkgreen':
+        bezier = false
+        ramp = [pink, start, green]
         break
       case 'redteal':
         bezier = false
@@ -169,10 +175,6 @@ const useColormap = (name, count = 255, format = 'rgb') => {
       case 'yellowpurple':
         bezier = false
         ramp = [yellow, start, purple]
-        break
-      case 'greenpink':
-        bezier = false
-        ramp = [green, start, pink]
         break
       case 'redgrey':
         bezier = false
@@ -210,14 +212,14 @@ const useColormap = (name, count = 255, format = 'rgb') => {
         bezier = false
         if (mode === 'dark') {
           ramp = [
-            chroma(purple).darken(0.1),
-            chroma(blue).darken(0.1),
-            chroma(teal).darken(0.1),
-            chroma(green).darken(0.1),
-            chroma(yellow).darken(0.1),
-            chroma(orange).darken(0.1),
-            chroma(red).darken(0.1),
-            chroma(pink).darken(0.1),
+            chroma(purple),
+            chroma(blue),
+            chroma(teal),
+            chroma(green),
+            chroma(yellow),
+            chroma(orange),
+            chroma(red),
+            chroma(pink),
           ]
         }
         if (mode === 'light') {
@@ -237,14 +239,14 @@ const useColormap = (name, count = 255, format = 'rgb') => {
         bezier = false
         if (mode === 'dark') {
           ramp = [
-            chroma(red).darken(0.1),
-            chroma(orange).darken(0.1),
-            chroma(yellow).darken(0.1),
-            chroma(green).darken(0.1),
-            chroma(teal).darken(0.1),
-            chroma(blue).darken(0.1),
-            chroma(purple).darken(0.1),
-            chroma(pink).darken(0.1),
+            chroma(red),
+            chroma(orange),
+            chroma(yellow),
+            chroma(green),
+            chroma(teal),
+            chroma(blue),
+            chroma(purple),
+            chroma(pink),
           ]
         }
         if (mode === 'light') {
