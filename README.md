@@ -15,7 +15,7 @@
 [github]: https://github.com/carbonplan/colormaps
 [github-badge]: https://badgen.net/badge/-/github?icon=github&label
 [build status]: https://github.com/carbonplan/colormaps/actions/workflows/main.yml/badge.svg
-[actions]: https://github.com/carbonplan/components/actions/workflows/main.yml
+[actions]: https://github.com/carbonplan/colormaps/actions/workflows/main.yml
 [mit license]: https://badgen.net/badge/license/MIT/blue
 [npm version]: https://badgen.net/npm/v/@carbonplan/colormaps
 
