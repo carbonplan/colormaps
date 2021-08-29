@@ -9,7 +9,7 @@ const useColormap = (name, count = 255, format = 'rgb') => {
   } = useThemeUI()
   const [mode] = useColorMode()
 
-  if (!colormaps.map(d => d.name).includes(name)) {
+  if (!colormaps.map((d) => d.name).includes(name)) {
     throw Error(`requested colormap '${name}' is not defined`)
   }
 

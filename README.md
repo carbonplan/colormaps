@@ -52,5 +52,5 @@ You can also retrieve a list of available colormaps with both names and types. U
 ```js
 import { colormaps } from '@carbonplan/colormaps'
 
-console.log(colormaps.filter(d => d.diverging).map(d => d.name))
+console.log(colormaps.filter((d) => d.type === 'diverging').map((d) => d.name))
 ```
