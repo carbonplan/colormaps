@@ -39,13 +39,13 @@ import { useColormap } from '@carbonplan/colormaps'
 const colormap = useColormap('warm')
 ```
 
-This returns an array of colors. The hook depends on the current `theme-ui` mode, so changing the `theme-ui` mode will change the colormap. By default the hook returns 255 colors in RGB format. Both the count and the format can be specified. For example, this will return `7` equispaced values from the `warm` colormap in `hex` format.
+This returns an array of colors. The hook depends on the current `theme-ui` mode, so changing the `theme-ui` mode will change the colormap. By default the hook returns 255 colors in `rgb` format. Both the count and the format can be specified. For example, this will return `7` equispaced values from the `warm` colormap in `hex` format.
 
 ```js
 const colormap = useColormap('warm', 7, 'hex')
 ```
 
-You can also easily see the list of available colormap names. Useful when building menu selections.
+You can also easily see the list of available colormap names. Useful for building menu selections and similar lists.
 
 ```js
 import { names } from '@carbonplan/colormaps'
