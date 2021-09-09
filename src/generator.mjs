@@ -1,4 +1,4 @@
-const chroma = require('chroma-js')
+import chroma from 'chroma-js'
 
 const generator = (name, mode, count, format) => {
   const red = '#f57273'
@@ -338,4 +338,4 @@ const generator = (name, mode, count, format) => {
   return scale.colors(count, format)
 }
 
-module.exports = generator
+export default generator

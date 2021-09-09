@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { useThemeUI, useColorMode } from 'theme-ui'
+import { useColorMode } from 'theme-ui'
 import colormaps from './colormaps'
 import generator from './generator'
 

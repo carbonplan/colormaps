@@ -1,4 +1,4 @@
-module.exports = [
+const colormaps = [
   { name: 'reds', type: 'sequentialSingleHue' },
   { name: 'oranges', type: 'sequentialSingleHue' },
   { name: 'yellows', type: 'sequentialSingleHue' },
@@ -30,3 +30,5 @@ module.exports = [
   { name: 'rainbow', type: 'cyclical' },
   { name: 'sinebow', type: 'cyclical' },
 ]
+
+export default colormaps
