@@ -1,4 +1,4 @@
-const colormaps = [
+module.exports = [
   { name: 'reds', type: 'sequentialSingleHue' },
   { name: 'oranges', type: 'sequentialSingleHue' },
   { name: 'yellows', type: 'sequentialSingleHue' },
@@ -7,12 +7,12 @@ const colormaps = [
   { name: 'blues', type: 'sequentialSingleHue' },
   { name: 'purples', type: 'sequentialSingleHue' },
   { name: 'pinks', type: 'sequentialSingleHue' },
-  { name: 'coolgreys', type: 'sequentialSingleHue' },
   { name: 'greys', type: 'sequentialSingleHue' },
-  { name: 'redorange', type: 'sequentialMultiHue' },
-  { name: 'yellowgreen', type: 'sequentialMultiHue' },
-  { name: 'tealblue', type: 'sequentialMultiHue' },
-  { name: 'purplepink', type: 'sequentialMultiHue' },
+  { name: 'fire', type: 'sequentialMultiHue' },
+  { name: 'earth', type: 'sequentialMultiHue' },
+  { name: 'water', type: 'sequentialMultiHue' },
+  { name: 'heart', type: 'sequentialMultiHue' },
+  { name: 'wind', type: 'sequentialMultiHue' },
   { name: 'warm', type: 'sequentialMultiHue' },
   { name: 'cool', type: 'sequentialMultiHue' },
   { name: 'pinkgreen', type: 'diverging' },
@@ -30,5 +30,3 @@ const colormaps = [
   { name: 'rainbow', type: 'cyclical' },
   { name: 'sinebow', type: 'cyclical' },
 ]
-
-export default colormaps
