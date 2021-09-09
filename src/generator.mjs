@@ -72,7 +72,7 @@ const generator = (name, mode, count, format) => {
         ramp = [
           start,
           chroma(red).darken(1),
-          chroma.mix(red, orange, 0.25, 'lab').darken(0.5),
+          chroma.mix(red, orange, 0.45, 'lab').darken(0.5),
           chroma(orange),
           chroma(orange).brighten(0.5),
         ]
@@ -93,7 +93,7 @@ const generator = (name, mode, count, format) => {
         ramp = [
           start,
           chroma(green).darken(1),
-          chroma.mix(green, yellow, 0.25, 'lab').darken(0.5),
+          chroma.mix(green, yellow, 0.45, 'lab').darken(0.5),
           chroma(yellow),
           chroma(yellow).brighten(0.5),
         ]
@@ -114,7 +114,7 @@ const generator = (name, mode, count, format) => {
         ramp = [
           start,
           chroma(blue).darken(1),
-          chroma.mix(blue, teal, 0.25, 'lab').darken(0.5),
+          chroma.mix(blue, teal, 0.45, 'lab').darken(0.5),
           chroma(teal),
           chroma(teal).brighten(0.5),
         ]
@@ -135,7 +135,7 @@ const generator = (name, mode, count, format) => {
         ramp = [
           start,
           chroma(purple).darken(1),
-          chroma.mix(purple, pink, 0.25, 'lab').darken(0.5),
+          chroma.mix(purple, pink, 0.45, 'lab').darken(0.5),
           chroma(pink),
           chroma(pink).brighten(0.5),
         ]
@@ -156,7 +156,7 @@ const generator = (name, mode, count, format) => {
         ramp = [
           start,
           chroma(grey).darken(1),
-          chroma.mix(grey, grey, 0.25, 'lab').darken(0.5),
+          chroma.mix(grey, grey, 0.45, 'lab').darken(0.5),
           chroma(grey),
           chroma(grey).brighten(0.5),
         ]
