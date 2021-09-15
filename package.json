@@ -1,13 +1,14 @@
 {
   "name": "@carbonplan/colormaps",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "color scales for data visualization",
   "main": "dst/index.js",
   "module": "dst/index.esm.js",
   "scripts": {
-    "build": "rimraf dst && microbundle src/index.js -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
-    "watch": "microbundle watch src/index.js -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
-    "format": "prettier --write 'src/**/*.js'"
+    "build": "rimraf dst && microbundle src/index.mjs -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
+    "watch": "microbundle watch src/index.mjs -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
+    "format": "prettier --write 'src/**/*.js'",
+    "foo": "node scripts/export.mjs"
   },
   "repository": {
     "type": "git",
