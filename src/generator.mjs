@@ -14,13 +14,13 @@ const generator = (name, mode, count, format) => {
   let start, middle, end
 
   if (mode === 'dark') {
-    start = chroma('#1b1e23').brighten(0.2)
+    start = chroma('#1b1e23').brighten(0)
     middle = chroma('#808080').brighten(0.6)
     end = chroma('#ebebec')
   }
 
   if (mode === 'light') {
-    start = chroma('#FFFFFF').darken(0.25)
+    start = chroma('#FFFFFF').darken(0)
     middle = chroma('#808080').brighten(0.75)
     end = chroma('#1b1e23')
   }
