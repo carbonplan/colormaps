@@ -8,7 +8,7 @@
     "build": "rimraf dst && microbundle src/index.mjs -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
     "watch": "microbundle watch src/index.mjs -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
     "format": "prettier --write 'src/**/*.js'",
-    "foo": "node scripts/export.mjs"
+    "export": "node scripts/export.mjs"
   },
   "repository": {
     "type": "git",
