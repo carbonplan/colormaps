@@ -4,7 +4,7 @@ import colormaps from './colormaps'
 import generator from './generator'
 
 const useColormap = (name, count = 255, format = 'rgb') => {
-  const [mode] = useColorMode()
+  const [mode, ] = useColorMode()
 
   let colorMode = mode
 
