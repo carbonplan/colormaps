@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Flex } from 'theme-ui'
-import useColormap from './use-colormap'
+import useColormap from '../use-colormap'
 
-import Gradient from './gradient.mjs'
-import Label from './label.mjs'
+import Gradient from './gradient'
+import Label from './label'
 
 const ColorbarInner = ({
   sx,
