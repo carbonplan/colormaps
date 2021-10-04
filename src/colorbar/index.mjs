@@ -5,24 +5,30 @@ import useColormap from '../use-colormap'
 import Gradient from './gradient'
 import Label from './label'
 
+const sx = {
+  clim: {
+    fontFamily: 'mono',
+    fontSize: ['9px', 0, 0, 1],
+    letterSpacing: 'smallcaps',
+    textTransform: 'uppercase',
+  },
+}
+
 const ColorbarInner = ({
-  sx,
   label,
   colormap,
   clim,
   units,
   format,
   horizontal,
+  ...props
 }) => {
   const climMin = (
     <Box
       sx={{
-        fontFamily: 'mono',
-        fontSize: ['9px', 0, 0, 1],
-        letterSpacing: 'smallcaps',
-        textTransform: 'uppercase',
+        ...sx.clim,
         ml: horizontal ? '10px' : 0,
-        mb: horizontal ? 0 : '-5px',
+        mb: horizontal ? 0 : '-7px',
       }}
     >
       {format(clim[0])}
@@ -31,11 +37,8 @@ const ColorbarInner = ({
   const climMax = (
     <Box
       sx={{
-        fontFamily: 'mono',
-        fontSize: ['9px', 0, 0, 1],
-        letterSpacing: 'smallcaps',
-        textTransform: 'uppercase',
-        mt: horizontal ? 0 : '-5px',
+        ...sx.clim,
+        mt: horizontal ? 0 : '-7px',
       }}
     >
       {format(clim[1])}
@@ -45,8 +48,9 @@ const ColorbarInner = ({
   return (
     <Flex
       sx={{
-        ...sx,
+        ...props.sx,
         flexDirection: 'row',
+        alignItems: 'center',
         justifyContent: 'flex-start',
         gap: [2],
       }}
@@ -81,8 +85,12 @@ const DerivedColorbar = ({ colormap, ...props }) => {
 const Colorbar = ({ colormap, ...props }) => {
   if (Array.isArray(colormap)) {
     return <ColorbarInner colormap={colormap} {...props} />
-  } else {
+  } else if (typeof colormap === 'string') {
     return <DerivedColorbar colormap={colormap} {...props} />
+  } else {
+    throw new Error(
+      `Unexpected colormap ${colormap} provided. Must be either string or array of colormap values.`
+    )
   }
 }
 
