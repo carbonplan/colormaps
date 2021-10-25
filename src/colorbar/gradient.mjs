@@ -6,8 +6,13 @@ const DIMENSIONS = {
   height: ['80px', '110px', '110px', '130px'],
 }
 
-const Gradient = ({ colormap, horizontal }) => {
-  const values = colormap.map((d, i) => `rgb(${d}) ${(i / 255) * 100}%`)
+const Gradient = ({ colormap, discrete, horizontal }) => {
+  const step = (1 / colormap.length) * 100
+  const values = colormap.map((d, i) => {
+    return `rgb(${d}) ${i * step}% ${
+      discrete && i < colormap.length - 1 ? `${(i + 1) * step}%` : ''
+    }`
+  })
 
   const css = `linear-gradient(to ${
     horizontal ? 'right' : 'top'

@@ -18,6 +18,7 @@ const ColorbarInner = ({
   label,
   colormap,
   clim,
+  discrete,
   units,
   format,
   horizontal,
@@ -58,7 +59,11 @@ const ColorbarInner = ({
       <Label label={label} units={units} horizontal={horizontal} />
 
       {horizontal && climMin}
-      <Gradient colormap={colormap} horizontal={horizontal} />
+      <Gradient
+        colormap={colormap}
+        horizontal={horizontal}
+        discrete={discrete}
+      />
       {horizontal && climMax}
 
       {!horizontal && (
