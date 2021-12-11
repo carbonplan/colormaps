@@ -1,6 +1,6 @@
 {
   "name": "@carbonplan/colormaps",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "color scales for data visualization",
   "main": "dst/index.js",
   "module": "dst/index.esm.js",
@@ -30,8 +30,7 @@
   ],
   "homepage": "https://github.com/carbonplan/colormaps#readme",
   "dependencies": {
-    "chroma-js": "^2.1.2",
-    "theme-ui": ">=0.11.1"
+    "chroma-js": "^2.1.2"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.2",
