@@ -2,7 +2,7 @@ import chroma from 'chroma-js'
 import colormaps from './colormaps.mjs'
 
 const makeColormap = (name, options) => {
-  const {count = 255, format = 'rgb', mode = 'dark'} = options
+  const { count = 255, format = 'rgb', mode = 'dark' } = options
 
   if (!colormaps.map((d) => d.name).includes(name)) {
     throw Error(`requested colormap '${name}' is not defined`)
