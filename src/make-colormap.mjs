@@ -1,6 +1,21 @@
 import chroma from 'chroma-js'
+import colormaps from './colormaps.mjs'
 
-const generator = (name, mode, count, format) => {
+const makeColormap = (name, options) => {
+  const { count = 255, format = 'rgb', mode = 'dark' } = options
+
+  if (!colormaps.map((d) => d.name).includes(name)) {
+    throw Error(`requested colormap '${name}' is not defined`)
+  }
+
+  if (!['light', 'dark'].includes(mode)) {
+    throw Error(`invalid mode '${mode}'`)
+  }
+
+  if (!Number.isInteger(count) || !(count > 0)) {
+    throw Error(`invalid count '${count}'`)
+  }
+
   const red = '#f57273'
   const orange = '#e39046'
   const yellow = '#c2b04c'
@@ -338,4 +353,4 @@ const generator = (name, mode, count, format) => {
   return scale.colors(count, format)
 }
 
-export default generator
+export default makeColormap

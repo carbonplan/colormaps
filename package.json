@@ -1,6 +1,6 @@
 {
   "name": "@carbonplan/colormaps",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "color scales for data visualization",
   "main": "dst/index.js",
   "module": "dst/index.esm.js",

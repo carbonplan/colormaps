@@ -1,27 +1,10 @@
 import { useMemo } from 'react'
-import { useColorMode } from 'theme-ui'
-import colormaps from './colormaps'
-import generator from './generator'
+import makeColormap from './make-colormap'
 
-const useColormap = (name, count = 255, format = 'rgb') => {
-  const [mode] = useColorMode()
-
-  let colorMode = mode
-
-  if (!['light', 'dark'].includes(mode)) {
-    console.warn(
-      `Unexpected \`theme-ui-color-mode\`, ${mode}. Using \`dark\` as fallback.`
-    )
-    colorMode = 'dark'
-  }
-
-  if (!colormaps.map((d) => d.name).includes(name)) {
-    throw Error(`requested colormap '${name}' is not defined`)
-  }
-
+const useColormap = (name, options) => {
   const colormap = useMemo(() => {
-    return generator(name, colorMode, count, format)
-  }, [name, colorMode, count])
+    return makeColormap(name, options)
+  }, [name, options?.count, options?.format, options?.mode])
 
   return colormap
 }
