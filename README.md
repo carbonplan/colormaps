@@ -72,3 +72,7 @@ import { colormaps } from '@carbonplan/colormaps'
 
 console.log(colormaps.filter((d) => d.type === 'diverging').map((d) => d.name))
 ```
+
+## note
+
+We are currently pinning to version 2.2 of `chroma-js` due to a [change](https://github.com/gka/chroma.js/commit/a0245db2da9b98b68056a212d1c0afdeb3250e0e) in the bezier implementation that changed our intended colormaps in an undesirable way.
