@@ -21,7 +21,7 @@
 
 This simple package contains a variety of colormaps for our data visualization needs at CarbonPlan. A primary use case is when rendering maps, but other uses will arise as well. Colormaps are designed to be both aesthetically pleasing and perceptually balanced, and all should work in both light and dark mode.
 
-See them demoed at [`design.carbonplan.org/colormaps`](https://design.carbonplan.org/colormaps).
+See them demoed at [`carbonplan.org/design.colormaps`](https://carbonplan.org/design/colormaps).
 
 ## installation
 
