@@ -8,7 +8,7 @@ const useThemedColormap = (name, options) => {
 
   if (!['light', 'dark'].includes(mode)) {
     console.warn(
-      `Unexpected \`theme-ui-color-mode\`, ${mode}. Using \`dark\` as fallback.`
+      `Unexpected \`theme-ui-color-mode\`, ${mode}. Using \`dark\` as fallback.`,
     )
     colorMode = 'dark'
   }
