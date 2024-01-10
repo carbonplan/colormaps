@@ -1,23 +1,19 @@
-<img
-  src='https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png'
-  height='48'
-/>
+<p align="left" >
+<a href='https://carbonplan.org'>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://carbonplan-assets.s3.amazonaws.com/monogram/light-small.png">
+  <img alt="CarbonPlan monogram." height="48" src="https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png">
+</picture>
+</a>
+</p>
 
 # carbonplan / colormaps
 
 **color scales for data visualization**
 
-[![GitHub][github-badge]][github]
-[![Build Status]][actions]
-![MIT License][]
-![NPM Version][]
-
-[github]: https://github.com/carbonplan/colormaps
-[github-badge]: https://badgen.net/badge/-/github?icon=github&label
-[build status]: https://github.com/carbonplan/colormaps/actions/workflows/main.yml/badge.svg
-[actions]: https://github.com/carbonplan/colormaps/actions/workflows/main.yml
-[mit license]: https://badgen.net/badge/license/MIT/blue
-[npm version]: https://badgen.net/npm/v/@carbonplan/colormaps
+[![CI](https://github.com/carbonplan/colormaps/actions/workflows/main.yml/badge.svg)](https://github.com/carbonplan/colormaps/actions/workflows/main.yml)
+![NPM Version](https://img.shields.io/npm/v/@carbonplan/colormaps)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 This simple package contains a variety of colormaps for our data visualization needs at CarbonPlan. A primary use case is when rendering maps, but other uses will arise as well. Colormaps are designed to be both aesthetically pleasing and perceptually balanced, and all should work in both light and dark mode.
 
@@ -76,3 +72,11 @@ console.log(colormaps.filter((d) => d.type === 'diverging').map((d) => d.name))
 ## note
 
 We are currently pinning to version 2.2 of `chroma-js` due to a [change](https://github.com/gka/chroma.js/commit/a0245db2da9b98b68056a212d1c0afdeb3250e0e) in the bezier implementation that changed our intended colormaps in an undesirable way.
+
+## license
+
+All the code in this repository is [MIT](https://choosealicense.com/licenses/mit/)-licensed, but we request that you please provide attribution if reusing any of our digital content (graphics, logo, articles, etc.).
+
+## about us
+
+CarbonPlan is a nonprofit organization that uses data and science for climate action. We aim to improve the transparency and scientific integrity of climate solutions with open data and tools. Find out more at [carbonplan.org](https://carbonplan.org/) or get in touch by [opening an issue](https://github.com/carbonplan/compliance-users/issues/new) or [sending us an email](mailto:hello@carbonplan.org).
